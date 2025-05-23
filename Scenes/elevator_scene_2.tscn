@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1mgkvixxl1j1"]
+
+[ext_resource type="Texture2D" uid="uid://be8vkgvt0kcas" path="res://Assets/Placeholder/SPR.jpg" id="1_1qoux"]
+[ext_resource type="Script" uid="uid://dwpag6l3e6k3k" path="res://Scripts/elevator_scene_2.gd" id="1_utb00"]
+[ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="2_utb00"]
+[ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="4_2dx35"]
+
+[node name="ElevatorScene2" type="Node2D"]
+script = ExtResource("1_utb00")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -87.0
+offset_right = 937.0
+offset_bottom = 630.0
+scale = Vector2(0.77, 0.77)
+texture = ExtResource("1_1qoux")
+
+[node name="DoorFrame" type="TextureRect" parent="."]
+offset_right = 320.0
+offset_bottom = 240.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_utb00")
+
+[node name="ButtonFloor2" type="Button" parent="."]
+visible = false
+offset_left = 546.0
+offset_top = 183.0
+offset_right = 564.0
+offset_bottom = 202.0
+theme_override_font_sizes/font_size = 8
+text = "2"
+
+[node name="ButtonFloor1" type="Button" parent="."]
+visible = false
+offset_left = 546.0
+offset_top = 159.0
+offset_right = 564.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 8
+text = "1"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="ButtonBoard" parent="." instance=ExtResource("4_2dx35")]
+
+[connection signal="pressed" from="ButtonFloor1" to="." method="_on_button_floor_1_pressed"]

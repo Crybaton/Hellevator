@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dby3a2axisir6"]
+
+[ext_resource type="Script" uid="uid://dytivxru8k64r" path="res://Scripts/buttonMaster.gd" id="1_0iiyx"]
+[ext_resource type="Texture2D" uid="uid://bmydf0sgffanj" path="res://Assets/Finished/Elevator/ButtonBoard.png" id="2_88ty5"]
+
+[node name="ButtonBoard" type="Node2D"]
+script = ExtResource("1_0iiyx")
+
+[node name="ButtonBoard" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_88ty5")
+
+[node name="Button1" type="Button" parent="."]
+offset_left = 546.0
+offset_top = 159.0
+offset_right = 564.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 9
+text = "1"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 546.0
+offset_top = 182.0
+offset_right = 564.0
+offset_bottom = 204.0
+theme_override_font_sizes/font_size = 9
+text = "2"
+
+[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

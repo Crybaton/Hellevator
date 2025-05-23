@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://cy8nsco4dsnqh"]
+
+[ext_resource type="Texture2D" uid="uid://c0hvvke4qvlqo" path="res://Assets/Finished/Elevator/dooropen.jpg" id="1_2ibjh"]
+[ext_resource type="Script" uid="uid://bjfb0c7jwsrv2" path="res://Scripts/start_menu_scene.gd" id="1_3yj3u"]
+[ext_resource type="Script" uid="uid://bafjj6twn6wqh" path="res://Scripts/marker_center.gd" id="1_vdot4"]
+[ext_resource type="Texture2D" uid="uid://b4500aeqmw17i" path="res://Assets/Finished/Elevator/doorleft.jpg" id="2_fgyjo"]
+[ext_resource type="Texture2D" uid="uid://dpfms7g6xw08f" path="res://Assets/Finished/Elevator/doorright.jpg" id="3_85mc1"]
+[ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="4_3yj3u"]
+[ext_resource type="Texture2D" uid="uid://cw57o33mlp4gw" path="res://Assets/Finished/Elevator/Doors.png" id="4_fgyjo"]
+[ext_resource type="Texture2D" uid="uid://cd2piiafyk6x" path="res://Assets/Placeholder/HELLEVATOR Logo.png" id="7_kwaka"]
+
+[node name="StartMenuScene" type="Node2D"]
+script = ExtResource("1_3yj3u")
+
+[node name="ParallaxAtHome" type="Node2D" parent="."]
+
+[node name="BG" type="ColorRect" parent="ParallaxAtHome"]
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 1)
+
+[node name="Flur" type="TextureRect" parent="ParallaxAtHome"]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_2ibjh")
+
+[node name="DoorLeft" type="TextureRect" parent="ParallaxAtHome"]
+visible = false
+offset_left = -90.0
+offset_right = 70.0
+offset_bottom = 240.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_fgyjo")
+
+[node name="DoorRight" type="TextureRect" parent="ParallaxAtHome"]
+visible = false
+offset_left = 410.0
+offset_right = 570.0
+offset_bottom = 240.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_85mc1")
+
+[node name="Doors" type="TextureRect" parent="ParallaxAtHome"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_fgyjo")
+
+[node name="DoorFrame" type="TextureRect" parent="ParallaxAtHome"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_3yj3u")
+
+[node name="Logo" type="TextureRect" parent="ParallaxAtHome"]
+z_index = 11
+offset_right = 640.0
+offset_bottom = 480.0
+texture = ExtResource("7_kwaka")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="MarkerCenter" type="Marker2D" parent="."]
+position = Vector2(320, 240)
+script = ExtResource("1_vdot4")
+
+[node name="ButtonStart" type="Button" parent="."]
+offset_left = 533.0
+offset_top = 281.0
+offset_right = 603.0
+offset_bottom = 312.0
+theme_override_colors/font_hover_pressed_color = Color(0.491046, 0.0351962, 0.0469354, 1)
+theme_override_colors/font_color = Color(0.698039, 0.0705882, 0.0862745, 1)
+text = "DECENT"
+
+[connection signal="pressed" from="ButtonStart" to="." method="_on_button_start_pressed"]
