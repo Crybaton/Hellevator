@@ -5,12 +5,14 @@ func _on_button_close_pressed():
 	if Global.PanicDoorsClosed == false:
 		Global.PanicDoorsClosing = true
 		Global.PanicDoorsClosed = true
-	
-#func _on_button_open_pressed():
-	#if Global.PanicDoorsClosed == true:
-		#Global.PanicDoorsClosing = false
-		#Global.PanicDoorsClosed = false
-	
+		print("button")
+		Global.ElevatorDamage += 1
+		print(Global.ElevatorDamage)
+
+func _death():
+	if Global.ElevatorDamage == 3:
+		SceneTransition.change_scene("res://Scenes/death_screen.tscn")
+
 	
 func _on_button_1_pressed():
 	SoundManager._pressed()

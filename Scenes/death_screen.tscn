@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://7yk560pxlkk6"]
+
+[ext_resource type="Texture2D" uid="uid://c8fxwkwqbb02e" path="res://Assets/Placeholder/important reference.png" id="1_8hps1"]
+
+[node name="DeathScreen" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1283.0
+offset_bottom = 962.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_8hps1")
