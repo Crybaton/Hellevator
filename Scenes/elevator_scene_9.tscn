@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1p7sj47774c6"]
+
+[ext_resource type="PackedScene" uid="uid://ba28mvps3jdwt" path="res://Shader/noise_shader.tscn" id="1_fcjp7"]
+[ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="2_j26jq"]
+[ext_resource type="Texture2D" uid="uid://cwvdwgaoofq80" path="res://Assets/Finished/Elevator/doc.png" id="3_kgmtt"]
+[ext_resource type="Texture2D" uid="uid://dpkm6mmlxdqtt" path="res://Assets/Finished/Elevator/anus.png" id="4_jap7a"]
+[ext_resource type="Texture2D" uid="uid://bvm5eiuohooe3" path="res://Assets/Finished/Elevator/finger.png" id="5_upxiv"]
+[ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="6_bqaka"]
+[ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="7_jap7a"]
+[ext_resource type="Script" uid="uid://d2ygibd8cw64n" path="res://Scripts/markerDoc.gd" id="7_upsd1"]
+
+[node name="elevator_scene_9" type="Node2D"]
+
+[node name="NoiseShader" parent="." instance=ExtResource("1_fcjp7")]
+
+[node name="Player" parent="." instance=ExtResource("2_j26jq")]
+
+[node name="ParallaxAtHome" type="Node2D" parent="."]
+
+[node name="BG" type="ColorRect" parent="ParallaxAtHome"]
+z_index = -5
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Doc" type="TextureRect" parent="ParallaxAtHome"]
+z_index = -4
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_kgmtt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Anus" type="TextureRect" parent="ParallaxAtHome"]
+z_index = -3
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_jap7a")
+metadata/_edit_use_anchors_ = true
+
+[node name="Finger" type="TextureRect" parent="ParallaxAtHome"]
+z_index = -2
+offset_right = 640.0
+offset_bottom = 480.0
+texture = ExtResource("5_upxiv")
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="MarkerCenter" type="Marker2D" parent="."]
+position = Vector2(320, 240)
+script = ExtResource("7_upsd1")
+
+[node name="PanicDoors" parent="." instance=ExtResource("7_jap7a")]
+
+[node name="ButtonBoard" parent="." instance=ExtResource("6_bqaka")]

@@ -34,3 +34,28 @@ func _on_button_3_pressed():
 func _on_button_4_pressed():
 	SoundManager._pressed()
 	SceneTransition.change_scene("res://Scenes/elevator_scene_4.tscn")
+
+
+func _on_button_5_pressed():
+	SoundManager._pressed()
+	SceneTransition.change_scene("res://Scenes/elevator_scene_5.tscn")
+
+
+func _on_button_6_pressed():
+	SoundManager._pressed()
+	SceneTransition.change_scene("res://Scenes/elevator_scene_6.tscn")
+
+
+func _on_button_7_pressed():
+	SoundManager._pressed()
+	SceneTransition.change_scene("res://Scenes/elevator_scene_7.tscn")
+
+
+func _on_button_8_pressed():
+	SoundManager._pressed()
+	SceneTransition.change_scene("res://Scenes/elevator_scene_8.tscn")
+
+
+func _on_button_9_pressed():
+	SoundManager._pressed()
+	SceneTransition.change_scene("res://Scenes/elevator_scene_9.tscn")

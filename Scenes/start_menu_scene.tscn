@@ -159,6 +159,7 @@ script = ExtResource("1_3yj3u")
 offset_right = 640.0
 offset_bottom = 480.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Flur" type="TextureRect" parent="ParallaxAtHome"]
 texture_filter = 1
@@ -166,6 +167,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
 texture = ExtResource("3_kwaka")
+metadata/_edit_use_anchors_ = true
 
 [node name="DoorLeft" type="TextureRect" parent="ParallaxAtHome"]
 visible = false
@@ -187,18 +189,21 @@ texture = ExtResource("3_85mc1")
 offset_right = 640.0
 offset_bottom = 480.0
 texture = ExtResource("4_fgyjo")
+metadata/_edit_use_anchors_ = true
 
 [node name="DoorFrame" type="TextureRect" parent="ParallaxAtHome"]
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
 texture = ExtResource("4_3yj3u")
+metadata/_edit_use_anchors_ = true
 
 [node name="Logo" type="TextureRect" parent="ParallaxAtHome"]
 z_index = 11
 offset_right = 640.0
 offset_bottom = 480.0
 texture = ExtResource("7_kwaka")
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0

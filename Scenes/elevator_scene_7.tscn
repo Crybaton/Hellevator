@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8uxnmcqh10i8"]
+
+[ext_resource type="PackedScene" uid="uid://ba28mvps3jdwt" path="res://Shader/noise_shader.tscn" id="1_rr8wv"]
+[ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="2_ogjjk"]
+[ext_resource type="Texture2D" uid="uid://dbaj65w6g8ia2" path="res://Assets/Finished/Elevator/corridor007.jpg" id="3_jtatg"]
+[ext_resource type="Script" uid="uid://7u2eo7oe3scy" path="res://Scripts/marker_rectum.gd" id="4_ogjjk"]
+[ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="4_tidie"]
+[ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="5_7mmeg"]
+
+[node name="elevator_scene_7" type="Node2D"]
+
+[node name="NoiseShader" parent="." instance=ExtResource("1_rr8wv")]
+
+[node name="Player" parent="." instance=ExtResource("2_ogjjk")]
+
+[node name="Hallway" type="TextureRect" parent="."]
+z_index = -2
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_jtatg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MarkerRectum" type="Marker2D" parent="."]
+script = ExtResource("4_ogjjk")
+
+[node name="PanicDoors" parent="." instance=ExtResource("4_tidie")]
+
+[node name="ButtonBoard" parent="." instance=ExtResource("5_7mmeg")]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn1un7dtb6ww2"]
+
+[ext_resource type="PackedScene" uid="uid://ba28mvps3jdwt" path="res://Shader/noise_shader.tscn" id="1_rit4t"]
+[ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="2_b3pib"]
+[ext_resource type="Texture2D" uid="uid://cj7lcex5sjpnc" path="res://Assets/Finished/Elevator/corridor008.jpg" id="3_p14tt"]
+[ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="4_ltak6"]
+[ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="5_umbab"]
+
+[node name="elevator_scene_8" type="Node2D"]
+
+[node name="NoiseShader" parent="." instance=ExtResource("1_rit4t")]
+
+[node name="Player" parent="." instance=ExtResource("2_b3pib")]
+
+[node name="Hallway" type="TextureRect" parent="."]
+z_index = -2
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_p14tt")
+
+[node name="PanicDoors" parent="." instance=ExtResource("4_ltak6")]
+
+[node name="ButtonBoard" parent="." instance=ExtResource("5_umbab")]

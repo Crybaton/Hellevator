@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://gvlfoushpbbg"]
+[gd_scene load_steps=8 format=3 uid="uid://gvlfoushpbbg"]
 
 [ext_resource type="Script" uid="uid://duvopm37udk2q" path="res://Scripts/panic_doors.gd" id="1_6sndi"]
 [ext_resource type="Texture2D" uid="uid://biytg4di313ie" path="res://Assets/Finished/Elevator/safetydoorleft.jpg" id="2_6sndi"]
 [ext_resource type="Texture2D" uid="uid://d11wiuw4tkyam" path="res://Assets/Finished/Elevator/safetydoorright.jpg" id="3_3kl52"]
+[ext_resource type="Script" uid="uid://dhol5if283jqr" path="res://Scripts/camera_panic_shake.gd" id="4_3kl52"]
 
 [sub_resource type="Animation" id="Animation_3kl52"]
 resource_name = "PanicClose"
@@ -90,5 +91,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_dvymq")
 }
 
-[node name="CameraShake" type="Camera2D" parent="."]
+[node name="CameraPanicShake" type="Camera2D" parent="."]
 anchor_mode = 0
+script = ExtResource("4_3kl52")
