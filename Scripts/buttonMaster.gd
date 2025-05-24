@@ -13,7 +13,7 @@ func _on_button_close_pressed():
 
 func _death():
 	if Global.ElevatorDamage == 3:
-		SceneTransition.change_scene("res://Scenes/death_screen.tscn")
+		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
 
 	
 func _on_button_1_pressed():

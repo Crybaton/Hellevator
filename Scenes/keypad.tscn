@@ -1,0 +1,154 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhsqf5q1ro8fl"]
+
+[ext_resource type="Script" uid="uid://ccbrn60vcndvt" path="res://Scripts/KeyPad.gd" id="2_ohrw4"]
+
+[node name="Keypad" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="NumPadWindow" type="Window" parent="."]
+title = "Enter Key"
+position = Vector2i(220, 90)
+size = Vector2i(200, 300)
+visible = false
+unresizable = true
+always_on_top = true
+min_size = Vector2i(200, 300)
+script = ExtResource("2_ohrw4")
+
+[node name="Camera2D" type="Camera2D" parent="NumPadWindow"]
+position = Vector2(0, -1)
+anchor_mode = 0
+
+[node name="Keypad" type="Control" parent="NumPadWindow/Camera2D"]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NumPadWindow/Camera2D/Keypad"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 300.0
+
+[node name="MarginContainer" type="MarginContainer" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/MarginContainer"]
+layout_mode = 2
+color = Color(0.476374, 0.10768, 0.0933189, 1)
+
+[node name="Label" type="Label" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="Button" type="Button" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1"
+
+[node name="Button2" type="Button" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "2"
+
+[node name="Button3" type="Button" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "3"
+
+[node name="Button4" type="Button" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "4"
+
+[node name="Button5" type="Button" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "5"
+
+[node name="Button6" type="Button" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "6"
+
+[node name="Button7" type="Button" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "7"
+
+[node name="Button8" type="Button" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "8"
+
+[node name="Button9" type="Button" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "9"
+
+[node name="ButtonC" type="Button" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "C"
+
+[node name="Button0" type="Button" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "0"
+
+[node name="ButtonOK" type="Button" parent="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "OK"
+
+[node name="Keypad" type="Button" parent="."]
+offset_left = 55.0
+offset_top = 194.0
+offset_right = 93.0
+offset_bottom = 248.0
+text = "Key
+pad"
+
+[connection signal="pressed" from="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer/Button" to="NumPadWindow" method="_on_button_pressed"]
+[connection signal="pressed" from="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer/Button2" to="NumPadWindow" method="_on_button_2_pressed"]
+[connection signal="pressed" from="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer/Button3" to="NumPadWindow" method="_on_button_3_pressed"]
+[connection signal="pressed" from="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer/Button4" to="NumPadWindow" method="_on_button_4_pressed"]
+[connection signal="pressed" from="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer/Button5" to="NumPadWindow" method="_on_button_5_pressed"]
+[connection signal="pressed" from="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer/Button6" to="NumPadWindow" method="_on_button_6_pressed"]
+[connection signal="pressed" from="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer/Button7" to="NumPadWindow" method="_on_button_7_pressed"]
+[connection signal="pressed" from="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer/Button8" to="NumPadWindow" method="_on_button_8_pressed"]
+[connection signal="pressed" from="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer/Button9" to="NumPadWindow" method="_on_button_9_pressed"]
+[connection signal="pressed" from="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer/ButtonC" to="NumPadWindow" method="_on_button_c_pressed"]
+[connection signal="pressed" from="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer/Button0" to="NumPadWindow" method="_on_button_0_pressed"]
+[connection signal="pressed" from="NumPadWindow/Camera2D/Keypad/VBoxContainer/GridContainer/ButtonOK" to="NumPadWindow" method="_on_button_ok_pressed"]
+[connection signal="pressed" from="Keypad" to="NumPadWindow" method="_on_keypad_pressed"]

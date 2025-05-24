@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn1un7dtb6ww2"]
+[gd_scene load_steps=7 format=3 uid="uid://dn1un7dtb6ww2"]
 
+[ext_resource type="Script" uid="uid://0xuwny6ng2cn" path="res://Scripts/elevator_scene_8.gd" id="1_b3pib"]
 [ext_resource type="PackedScene" uid="uid://ba28mvps3jdwt" path="res://Shader/noise_shader.tscn" id="1_rit4t"]
 [ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="2_b3pib"]
 [ext_resource type="Texture2D" uid="uid://cj7lcex5sjpnc" path="res://Assets/Finished/Elevator/corridor008.jpg" id="3_p14tt"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="5_umbab"]
 
 [node name="elevator_scene_8" type="Node2D"]
+script = ExtResource("1_b3pib")
 
 [node name="NoiseShader" parent="." instance=ExtResource("1_rit4t")]
 

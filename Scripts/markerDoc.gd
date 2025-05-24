@@ -21,7 +21,7 @@ func middlebackground_vector():
 		
 		$"../ParallaxAtHome/Anus".position = offset * -0.01
 		$"../ParallaxAtHome/Doc".position = offset * -0.06
-		$"../ParallaxAtHome/Finger".position = offset * -0.19
+		$"../ParallaxAtHome/Finger".position = offset * 0.19
 		
 
 func _input(event):
