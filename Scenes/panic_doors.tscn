@@ -91,3 +91,4 @@ libraries = {
 }
 
 [node name="CameraShake" type="Camera2D" parent="."]
+anchor_mode = 0

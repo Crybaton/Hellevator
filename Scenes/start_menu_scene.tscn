@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://cy8nsco4dsnqh"]
 
-[ext_resource type="Texture2D" uid="uid://c0hvvke4qvlqo" path="res://Assets/Finished/Elevator/dooropen.jpg" id="1_2ibjh"]
 [ext_resource type="Script" uid="uid://bjfb0c7jwsrv2" path="res://Scripts/start_menu_scene.gd" id="1_3yj3u"]
 [ext_resource type="Script" uid="uid://bafjj6twn6wqh" path="res://Scripts/marker_center.gd" id="1_vdot4"]
 [ext_resource type="Texture2D" uid="uid://b4500aeqmw17i" path="res://Assets/Finished/Elevator/doorleft.jpg" id="2_fgyjo"]
 [ext_resource type="PackedScene" uid="uid://ba28mvps3jdwt" path="res://Shader/noise_shader.tscn" id="2_kwaka"]
 [ext_resource type="Texture2D" uid="uid://dpfms7g6xw08f" path="res://Assets/Finished/Elevator/doorright.jpg" id="3_85mc1"]
+[ext_resource type="Texture2D" uid="uid://v2f85c3clceq" path="res://Assets/Finished/Elevator/corridorsolo.jpg" id="3_kwaka"]
 [ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="4_3yj3u"]
 [ext_resource type="Texture2D" uid="uid://cw57o33mlp4gw" path="res://Assets/Finished/Elevator/Doors.png" id="4_fgyjo"]
 [ext_resource type="Texture2D" uid="uid://cd2piiafyk6x" path="res://Assets/Placeholder/HELLEVATOR Logo.png" id="7_kwaka"]
@@ -165,7 +165,7 @@ texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
-texture = ExtResource("1_2ibjh")
+texture = ExtResource("3_kwaka")
 
 [node name="DoorLeft" type="TextureRect" parent="ParallaxAtHome"]
 visible = false

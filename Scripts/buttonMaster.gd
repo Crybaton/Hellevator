@@ -1,5 +1,7 @@
 extends Node2D
 
+func _physics_process(delta):
+	_death()
 
 func _on_button_close_pressed():
 	if Global.PanicDoorsClosed == false:
