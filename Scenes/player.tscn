@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxdew7pv50hnu"]
+
+[ext_resource type="Script" uid="uid://dmsrqqnlb7r2k" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://y2oa00y1h6b5" path="res://Assets/Finished/FLASHLIGHT.png" id="2_cvnsp"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_cvnsp")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 6.1
+shadow_enabled = true
+texture = ExtResource("2_cvnsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

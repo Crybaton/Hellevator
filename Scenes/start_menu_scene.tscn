@@ -211,7 +211,8 @@ offset_right = 603.0
 offset_bottom = 312.0
 theme_override_colors/font_hover_pressed_color = Color(0.491046, 0.0351962, 0.0469354, 1)
 theme_override_colors/font_color = Color(0.698039, 0.0705882, 0.0862745, 1)
-text = "DECENT"
+text = "DESCEND
+"
 
 [node name="AnimationLogo" type="AnimationPlayer" parent="."]
 libraries = {

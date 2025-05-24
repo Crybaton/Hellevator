@@ -1,10 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://dby3a2axisir6"]
+[gd_scene load_steps=5 format=3 uid="uid://dby3a2axisir6"]
 
 [ext_resource type="Script" uid="uid://dytivxru8k64r" path="res://Scripts/buttonMaster.gd" id="1_0iiyx"]
 [ext_resource type="Texture2D" uid="uid://bmydf0sgffanj" path="res://Assets/Finished/Elevator/ButtonBoard.png" id="2_88ty5"]
+[ext_resource type="Shader" uid="uid://ddhltppp0dvda" path="res://Shader/noise.gdshader" id="2_475mw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vseci"]
+shader = ExtResource("2_475mw")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.032
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 0.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 0.1
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 3.0
+shader_parameter/static_noise_intensity = 0.121
+shader_parameter/aberration = 0.00500005
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.018
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 1.0
+shader_parameter/vignette_opacity = 0.5
 
 [node name="ButtonBoard" type="Node2D"]
 script = ExtResource("1_0iiyx")
+
+[node name="Shader" type="CanvasLayer" parent="."]
+
+[node name="TheMagic" type="ColorRect" parent="Shader"]
+material = SubResource("ShaderMaterial_vseci")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="ButtonBoard" type="TextureRect" parent="."]
 offset_right = 40.0
