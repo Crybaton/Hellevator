@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvxtp86dpsph5"]
+[gd_scene load_steps=7 format=3 uid="uid://dvxtp86dpsph5"]
 
 [ext_resource type="Script" uid="uid://b6scml2fch6ma" path="res://Scripts/elevator_scene_3.gd" id="1_bi5jp"]
 [ext_resource type="Texture2D" uid="uid://x33bbljer2fq" path="res://Assets/Finished/Elevator/corridor003.jpg" id="1_ea6ue"]
+[ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="2_0kfb5"]
 [ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="2_bi5jp"]
 [ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="3_0kfb5"]
 [ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="3_reeb5"]
 
 [node name="elevator_scene_3" type="Node2D"]
 script = ExtResource("1_bi5jp")
+
+[node name="Player" parent="." instance=ExtResource("2_0kfb5")]
 
 [node name="Hallway" type="TextureRect" parent="."]
 z_index = -2
