@@ -1,14 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://beerbbh0uwhpx"]
+[gd_scene load_steps=8 format=3 uid="uid://beerbbh0uwhpx"]
 
 [ext_resource type="Script" uid="uid://wtuv4afucjc0" path="res://Scripts/elevator_scene_5.gd" id="1_8xx5v"]
 [ext_resource type="Texture2D" uid="uid://dgelc4sym48x2" path="res://Assets/Finished/Elevator/corridor005.jpg" id="1_sur6d"]
 [ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="2_4p1sj"]
 [ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="2_evyry"]
+[ext_resource type="PackedScene" uid="uid://ba28mvps3jdwt" path="res://Shader/noise_shader.tscn" id="2_rgvrj"]
 [ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="2_vld8g"]
 [ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="4_8xx5v"]
 
 [node name="elevator_scene_5" type="Node2D"]
 script = ExtResource("1_8xx5v")
+
+[node name="NoiseShader" parent="." instance=ExtResource("2_rgvrj")]
 
 [node name="Player" parent="." instance=ExtResource("2_4p1sj")]
 
