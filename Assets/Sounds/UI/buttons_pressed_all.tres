@@ -1,0 +1,9 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=3 format=3 uid="uid://c8x2dnoaub3a3"]
+
+[ext_resource type="AudioStream" uid="uid://ciyuyqr8c1mtk" path="res://Assets/Sounds/UI/button pressed 1.mp3" id="1_byvc5"]
+[ext_resource type="AudioStream" uid="uid://bwva00nn81esy" path="res://Assets/Sounds/UI/button pressed 2.mp3" id="2_3j0q8"]
+
+[resource]
+streams_count = 2
+stream_0/stream = ExtResource("1_byvc5")
+stream_1/stream = ExtResource("2_3j0q8")
