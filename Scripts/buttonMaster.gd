@@ -7,3 +7,11 @@ func _on_button_1_pressed():
 
 func _on_button_2_pressed():
 	SceneTransition.change_scene("res://Scenes/elevator_scene_2.tscn")
+
+
+func _on_button_3_pressed():
+	SceneTransition.change_scene("res://Scenes/elevator_scene_3.tscn")
+
+
+func _on_button_4_pressed():
+	SceneTransition.change_scene("res://Scenes/elevator_scene_4.tscn")

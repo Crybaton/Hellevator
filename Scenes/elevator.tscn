@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxuh8rnyasyvd"]
 
-[ext_resource type="Texture2D" uid="uid://daveww740rku7" path="res://Assets/Placeholder/TRP.jpg" id="1_7i85y"]
 [ext_resource type="Script" uid="uid://b7y8l6s046ydw" path="res://Scripts/elevator.gd" id="1_jd6vs"]
+[ext_resource type="Texture2D" uid="uid://bywxfwfaawq8j" path="res://Assets/Finished/Elevator/corridor001.jpg" id="2_1gjip"]
 [ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="2_jd6vs"]
 [ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="5_sdfrh"]
 
@@ -9,11 +9,10 @@
 script = ExtResource("1_jd6vs")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -108.0
-offset_right = 578.0
-offset_bottom = 386.0
-scale = Vector2(1.27153, 1.27153)
-texture = ExtResource("1_7i85y")
+offset_right = 320.0
+offset_bottom = 240.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_1gjip")
 
 [node name="DoorFrame" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -21,26 +20,4 @@ offset_bottom = 40.0
 scale = Vector2(2, 2)
 texture = ExtResource("2_jd6vs")
 
-[node name="ButtonFloor1" type="Button" parent="."]
-visible = false
-offset_left = 546.0
-offset_top = 159.0
-offset_right = 564.0
-offset_bottom = 179.0
-theme_override_font_sizes/font_size = 8
-text = "1"
-text_overrun_behavior = 1
-clip_text = true
-
-[node name="ButtonFloor2" type="Button" parent="."]
-visible = false
-offset_left = 546.0
-offset_top = 183.0
-offset_right = 564.0
-offset_bottom = 202.0
-theme_override_font_sizes/font_size = 8
-text = "2"
-
 [node name="ButtonBoard" parent="." instance=ExtResource("5_sdfrh")]
-
-[connection signal="pressed" from="ButtonFloor2" to="." method="_on_button_pressed"]
