@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 Global="*res://Scripts/Global.gd"
 SceneTransition="*res://Transition/scene_transition.tscn"
 SoundManager="*res://Scenes/sound_manager.tscn"
+PanicDoors="*res://Scenes/panic_doors.tscn"
+ButtonBoard="*res://Scenes/button_board.tscn"
 
 [display]
 

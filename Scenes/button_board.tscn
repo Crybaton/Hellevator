@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dby3a2axisir6"]
 
 [ext_resource type="Script" uid="uid://dytivxru8k64r" path="res://Scripts/buttonMaster.gd" id="1_0iiyx"]
-[ext_resource type="Texture2D" uid="uid://bmydf0sgffanj" path="res://Assets/Finished/Elevator/ButtonBoard.png" id="2_88ty5"]
+[ext_resource type="Texture2D" uid="uid://35ida144aj7d" path="res://Assets/Finished/Elevator/ButtonCloseAlt.png" id="2_0iiyx"]
 
 [node name="ButtonBoard" type="Node2D"]
 script = ExtResource("1_0iiyx")
@@ -9,7 +9,22 @@ script = ExtResource("1_0iiyx")
 [node name="ButtonBoard" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_88ty5")
+texture = ExtResource("2_0iiyx")
+
+[node name="ButtonClose" type="Button" parent="."]
+offset_left = 57.0
+offset_top = 146.0
+offset_right = 93.0
+offset_bottom = 178.0
+text = ">|<"
+
+[node name="ButtonOpen" type="Button" parent="."]
+visible = false
+offset_left = 56.0
+offset_top = 208.0
+offset_right = 95.0
+offset_bottom = 240.0
+text = "<|>"
 
 [node name="Button1" type="Button" parent="."]
 offset_left = 546.0
@@ -43,6 +58,8 @@ offset_bottom = 252.0
 theme_override_font_sizes/font_size = 9
 text = "4"
 
+[connection signal="pressed" from="ButtonClose" to="." method="_on_button_close_pressed"]
+[connection signal="pressed" from="ButtonOpen" to="." method="_on_button_open_pressed"]
 [connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

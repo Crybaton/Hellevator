@@ -1,18 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1ghaawx5pa73"]
+[gd_scene load_steps=6 format=3 uid="uid://d1ghaawx5pa73"]
 
 [ext_resource type="Texture2D" uid="uid://clwef05kpwy1w" path="res://Assets/Finished/Elevator/corridor004.jpg" id="1_8py2d"]
+[ext_resource type="Script" uid="uid://b023uyy78jvac" path="res://Scripts/elevator_scene_4.gd" id="1_pjf0i"]
 [ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="2_5yfo4"]
 [ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="3_5yfo4"]
+[ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="3_n4g6e"]
 
 [node name="elevator_scene_4" type="Node2D"]
+script = ExtResource("1_pjf0i")
 
 [node name="Hallway" type="TextureRect" parent="."]
+z_index = -2
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
 texture = ExtResource("1_8py2d")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="PanicDoors" parent="." instance=ExtResource("3_n4g6e")]
+
+[node name="Door" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
