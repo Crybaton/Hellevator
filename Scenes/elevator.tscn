@@ -1,12 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxuh8rnyasyvd"]
+[gd_scene load_steps=9 format=3 uid="uid://bxuh8rnyasyvd"]
 
 [ext_resource type="Texture2D" uid="uid://daveww740rku7" path="res://Assets/Placeholder/TRP.jpg" id="1_7i85y"]
 [ext_resource type="Script" uid="uid://b7y8l6s046ydw" path="res://Scripts/elevator.gd" id="1_jd6vs"]
 [ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="2_jd6vs"]
+[ext_resource type="Shader" uid="uid://ddhltppp0dvda" path="res://Shader/bloodletting.gdshader" id="2_sdfrh"]
+[ext_resource type="Shader" uid="uid://d1qmt3bcev54e" path="res://Shader/flashlight.gdshader" id="3_ehl1p"]
 [ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="5_sdfrh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ehl1p"]
+shader = ExtResource("2_sdfrh")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.032
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 0.0
+shader_parameter/roll_size = 0.0
+shader_parameter/roll_variation = 0.1
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 3.0
+shader_parameter/static_noise_intensity = 0.121
+shader_parameter/aberration = 0.00500005
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.018
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 1.0
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2rfo"]
+shader = ExtResource("3_ehl1p")
+shader_parameter/circle_size = 0.5
+shader_parameter/feather = 0.05
+shader_parameter/circle_position = Vector2(0.5, 0.5)
+shader_parameter/screen_width = 640.0
+shader_parameter/screen_height = 480.0
 
 [node name="Elevator" type="Node2D"]
 script = ExtResource("1_jd6vs")
+
+[node name="Shader" type="CanvasLayer" parent="."]
+
+[node name="TheMagic" type="ColorRect" parent="Shader"]
+material = SubResource("ShaderMaterial_ehl1p")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Shader"]
+visible = false
+material = SubResource("ShaderMaterial_i2rfo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -108.0
