@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://ywqb2dgggkc3"]
+[gd_scene load_steps=10 format=3 uid="uid://ywqb2dgggkc3"]
 
 [ext_resource type="Texture2D" uid="uid://b4500aeqmw17i" path="res://Assets/Finished/Elevator/doorleft.jpg" id="1_1vfy5"]
 [ext_resource type="Script" uid="uid://6x3xpop8c3co" path="res://Scripts/scene_transition.gd" id="1_wkn0b"]
 [ext_resource type="Texture2D" uid="uid://dpfms7g6xw08f" path="res://Assets/Finished/Elevator/doorright.jpg" id="2_wkn0b"]
 [ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="3_drwcg"]
+[ext_resource type="Texture2D" uid="uid://be8vkgvt0kcas" path="res://Assets/Placeholder/SPR.jpg" id="5_3v3ks"]
+[ext_resource type="Script" uid="uid://cagskvdmwuxem" path="res://Transition/camera_shake.gd" id="5_drwcg"]
 
 [sub_resource type="Animation" id="Animation_1vfy5"]
 resource_name = "RESET"
@@ -205,7 +207,17 @@ offset_bottom = 480.0
 mouse_filter = 2
 texture = ExtResource("3_drwcg")
 
+[node name="TextureRect" type="TextureRect" parent="dissolve_rect"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_3v3ks")
+
 [node name="TransitionPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_drwcg")
 }
+
+[node name="CameraShake" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("5_drwcg")
