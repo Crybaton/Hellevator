@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cy8nsco4dsnqh"]
+[gd_scene load_steps=13 format=3 uid="uid://cy8nsco4dsnqh"]
 
 [ext_resource type="Texture2D" uid="uid://c0hvvke4qvlqo" path="res://Assets/Finished/Elevator/dooropen.jpg" id="1_2ibjh"]
 [ext_resource type="Script" uid="uid://bjfb0c7jwsrv2" path="res://Scripts/start_menu_scene.gd" id="1_3yj3u"]
@@ -8,6 +8,144 @@
 [ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="4_3yj3u"]
 [ext_resource type="Texture2D" uid="uid://cw57o33mlp4gw" path="res://Assets/Finished/Elevator/Doors.png" id="4_fgyjo"]
 [ext_resource type="Texture2D" uid="uid://cd2piiafyk6x" path="res://Assets/Placeholder/HELLEVATOR Logo.png" id="7_kwaka"]
+
+[sub_resource type="Animation" id="Animation_3yj3u"]
+resource_name = "LogoDown"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxAtHome/Logo:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 480)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxAtHome/Logo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 433.17)]
+}
+
+[sub_resource type="Animation" id="Animation_kwaka"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxAtHome/Logo:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 480)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxAtHome/Logo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParallaxAtHome/Doors:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 480)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParallaxAtHome/Doors:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ParallaxAtHome/Doors:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yye11"]
+resource_name = "DoorRemove"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParallaxAtHome/Doors:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 480), Vector2(1200, 480)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParallaxAtHome/Doors:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-262, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParallaxAtHome/Doors:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yye11"]
+_data = {
+&"DoorRemove": SubResource("Animation_yye11"),
+&"LogoDown": SubResource("Animation_3yj3u"),
+&"RESET": SubResource("Animation_kwaka")
+}
 
 [node name="StartMenuScene" type="Node2D"]
 script = ExtResource("1_3yj3u")
@@ -43,8 +181,8 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_85mc1")
 
 [node name="Doors" type="TextureRect" parent="ParallaxAtHome"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 640.0
+offset_bottom = 480.0
 texture = ExtResource("4_fgyjo")
 
 [node name="DoorFrame" type="TextureRect" parent="ParallaxAtHome"]
@@ -74,5 +212,10 @@ offset_bottom = 312.0
 theme_override_colors/font_hover_pressed_color = Color(0.491046, 0.0351962, 0.0469354, 1)
 theme_override_colors/font_color = Color(0.698039, 0.0705882, 0.0862745, 1)
 text = "DECENT"
+
+[node name="AnimationLogo" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yye11")
+}
 
 [connection signal="pressed" from="ButtonStart" to="." method="_on_button_start_pressed"]
