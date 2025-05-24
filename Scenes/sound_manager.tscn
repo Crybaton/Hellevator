@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" uid="uid://ctfxitfeb616x" path="res://Scripts/sound_manager.gd" id="1_32i44"]
 [ext_resource type="AudioStream" uid="uid://c8x2dnoaub3a3" path="res://Assets/Sounds/UI/buttons_pressed_all.tres" id="2_25ke0"]
-[ext_resource type="AudioStream" uid="uid://bfbrj3jxogb64" path="res://Assets/Sounds/elevator close.mp3" id="3_1ohty"]
+[ext_resource type="AudioStream" uid="uid://pnewofh5y2pj" path="res://Assets/Sounds/Elevator/elevator.mp3" id="3_1ohty"]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_32i44")
 
 [node name="Button Pressed" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_25ke0")
-volume_db = -7.0
+volume_db = -4.0
 
 [node name="Elevator Closing" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1ohty")
+volume_db = -7.0
