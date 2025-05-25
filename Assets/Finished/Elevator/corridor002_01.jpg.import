@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c706dcxd48e3y"
-path="res://.godot/imported/corridor008.jpg-3e8527718891906fa0e1dbdb2a3dddd8.ctex"
+uid="uid://bii5076cg0cm8"
+path="res://.godot/imported/corridor002_01.jpg-ef6c8ab5a8cc83af703261c4d6a6bc56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Finished/Elevator/corridor008.jpg"
-dest_files=["res://.godot/imported/corridor008.jpg-3e8527718891906fa0e1dbdb2a3dddd8.ctex"]
+source_file="res://Assets/Finished/Elevator/corridor002_01.jpg"
+dest_files=["res://.godot/imported/corridor002_01.jpg-ef6c8ab5a8cc83af703261c4d6a6bc56.ctex"]
 
 [params]
 

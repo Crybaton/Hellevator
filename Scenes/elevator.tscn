@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bxuh8rnyasyvd"]
 
 [ext_resource type="Script" uid="uid://b7y8l6s046ydw" path="res://Scripts/elevator.gd" id="1_jd6vs"]
-[ext_resource type="Texture2D" uid="uid://bywxfwfaawq8j" path="res://Assets/Finished/Elevator/corridor001.jpg" id="2_1gjip"]
+[ext_resource type="Texture2D" uid="uid://bnqxqkmm0vua6" path="res://Assets/Finished/Elevator/corridor001.jpg" id="2_1gjip"]
 [ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="2_ehl1p"]
 [ext_resource type="PackedScene" uid="uid://ba28mvps3jdwt" path="res://Shader/noise_shader.tscn" id="2_i2rfo"]
 [ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="2_jd6vs"]

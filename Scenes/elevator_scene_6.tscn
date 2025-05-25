@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dhpj6npjefvjv" path="res://Scripts/elevator_scene_6.gd" id="1_7cpgs"]
 [ext_resource type="PackedScene" uid="uid://ba28mvps3jdwt" path="res://Shader/noise_shader.tscn" id="1_hc5vp"]
 [ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="2_7cpgs"]
-[ext_resource type="Texture2D" uid="uid://5n6qrujpcxhj" path="res://Assets/Finished/Elevator/corridor006.jpg" id="3_hc5vp"]
+[ext_resource type="Texture2D" uid="uid://bmobyji30erir" path="res://Assets/Finished/Elevator/corridor006.jpg" id="3_hc5vp"]
 [ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="4_7pum5"]
 [ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="5_ld55p"]
 
