@@ -8,7 +8,6 @@ extends Node
 @onready var panic_doors: AudioStreamPlayer = $"Panic Doors"
 @onready var home: AudioStreamPlayer = $Home
 @onready var leaving: AudioStreamPlayer = $Leaving
-@onready var four: AudioStreamPlayer = $Four
 
 @onready var monster_drop: AudioStreamPlayer = $"Monster Drop"
 
@@ -43,6 +42,8 @@ func _leaving():
 @onready var hallway_6: AudioStreamPlayer = $"Hallway 6"
 @onready var hallway_9: AudioStreamPlayer = $"Hallway 9"
 @onready var flesh: AudioStreamPlayer = $Flesh
+@onready var fart: AudioStreamPlayer = $Fart
+@onready var four: AudioStreamPlayer = $Four
 
 
 # Music & Ambience (Loops)
@@ -68,6 +69,10 @@ func _elevator5():
 
 func _elevator6():
 	hallway_6.play()
+
+func _elevator7():
+	flesh.play()
+	fart.play()
 
 func _elevator9():
 	hallway_9.play()
