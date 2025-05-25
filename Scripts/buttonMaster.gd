@@ -8,6 +8,7 @@ func _on_button_close_pressed():
 	if Global.PanicDoorsClosed == false:
 		Global.PanicDoorsClosing = true
 		Global.PanicDoorsClosed = true
+		SoundManager._panic()
 		print("button")
 		Global.ElevatorDamage += 1
 		print(Global.ElevatorDamage)

@@ -5,6 +5,7 @@ extends Node
 
 @onready var button_pressed: AudioStreamPlayer = $"Button Pressed"
 @onready var elevator_closing: AudioStreamPlayer = $"Elevator Closing"
+@onready var panic_doors: AudioStreamPlayer = $"Panic Doors"
 
 
 #Sound Library (One Time)
@@ -14,6 +15,8 @@ func _pressed():
 func _closing():
 	elevator_closing.play()
 
+func _panic():
+	panic_doors.play()
 
 
 

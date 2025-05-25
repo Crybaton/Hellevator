@@ -7,7 +7,6 @@ func PanicDoorsClose():
 	#print("Close")
 	if Global.PanicDoorsClosing == true and Global.PanicDoorsClosed == true:
 		Global.Save = true 
-		SoundManager._closing()
 		Global.Screenshake = true
 		$PanicDoors.play("PanicClose")	
 		#muss noch ersetzt werden durch richtigen sound
