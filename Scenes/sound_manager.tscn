@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bpcmlasato1yc"]
+[gd_scene load_steps=17 format=3 uid="uid://bpcmlasato1yc"]
 
 [ext_resource type="Script" uid="uid://ctfxitfeb616x" path="res://Scripts/sound_manager.gd" id="1_32i44"]
 [ext_resource type="AudioStream" uid="uid://c8x2dnoaub3a3" path="res://Assets/Sounds/UI/buttons_pressed_all.tres" id="2_25ke0"]
@@ -12,6 +12,10 @@
 [ext_resource type="AudioStream" uid="uid://ct5b88ctp8n0i" path="res://Assets/Sounds/Hallways/hallway3.mp3" id="10_lw6xy"]
 [ext_resource type="AudioStream" uid="uid://pyehxbvn282c" path="res://Assets/Sounds/Hallways/hallway4.mp3" id="11_rqs6t"]
 [ext_resource type="AudioStream" uid="uid://b7bi4esxb1tpn" path="res://Assets/Sounds/Hallways/hallway5.mp3" id="12_h0di3"]
+[ext_resource type="AudioStream" uid="uid://dklpdddhi0l3" path="res://Assets/Sounds/UI/iamleavingearly.mp3" id="13_w8ulo"]
+[ext_resource type="AudioStream" uid="uid://bvvc4ko1apuqc" path="res://Assets/Sounds/UI/shouldIgohome.mp3" id="14_sojss"]
+[ext_resource type="AudioStream" uid="uid://4g4tm8ad8d0h" path="res://Assets/Sounds/Hallways/four.mp3" id="15_sojss"]
+[ext_resource type="AudioStream" uid="uid://bb4scpqg0ebh1" path="res://Assets/Sounds/Hallways/flesh.mp3" id="16_kquec"]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_32i44")
@@ -57,5 +61,24 @@ stream = ExtResource("11_rqs6t")
 
 [node name="Hallway 5" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_h0di3")
+volume_db = 3.0
 
 [node name="Hallway 6" type="AudioStreamPlayer" parent="."]
+
+[node name="Hallway 9" type="AudioStreamPlayer" parent="."]
+
+[node name="Leaving" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_w8ulo")
+volume_db = 4.0
+
+[node name="Home" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_sojss")
+volume_db = 3.0
+
+[node name="Four" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_sojss")
+volume_db = 3.0
+
+[node name="Flesh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_kquec")
+volume_db = -8.0
