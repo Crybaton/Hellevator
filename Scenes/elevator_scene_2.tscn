@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1mgkvixxl1j1"]
+[gd_scene load_steps=12 format=3 uid="uid://d1mgkvixxl1j1"]
 
 [ext_resource type="Script" uid="uid://dwpag6l3e6k3k" path="res://Scripts/elevator_scene_2.gd" id="1_utb00"]
 [ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="2_d134x"]
@@ -6,39 +6,50 @@
 [ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="2_utb00"]
 [ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="3_ui1o1"]
 [ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="4_2dx35"]
+[ext_resource type="Texture2D" uid="uid://dvhkrrqo3vlgd" path="res://Assets/Finished/Elevator/corridor002_02.png" id="4_brf3s"]
 [ext_resource type="Texture2D" uid="uid://bii5076cg0cm8" path="res://Assets/Finished/Elevator/corridor002_01.jpg" id="4_joo4d"]
-[ext_resource type="Texture2D" uid="uid://bdscys30c058g" path="res://Assets/Finished/Monster/MonsterLVL2.png" id="8_brf3s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ydxg"]
-atlas = ExtResource("8_brf3s")
-region = Rect2(0, 0, 320, 240)
+atlas = ExtResource("4_brf3s")
+region = Rect2(200, 0, 120, 240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6bwj3"]
-atlas = ExtResource("8_brf3s")
-region = Rect2(320, 0, 320, 240)
+atlas = ExtResource("4_brf3s")
+region = Rect2(80, 0, 120, 240)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2jjps"]
-atlas = ExtResource("8_brf3s")
-region = Rect2(640, 0, 320, 240)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qgeuq"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2jjps"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
-}, {
-"duration": 4.0,
 "texture": SubResource("AtlasTexture_7ydxg")
 }, {
-"duration": 4.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6bwj3")
 }, {
-"duration": 5.0,
-"texture": SubResource("AtlasTexture_2jjps")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ydxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bwj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ydxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bwj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ydxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bwj3")
+}, {
+"duration": 7.0,
+"texture": SubResource("AtlasTexture_7ydxg")
 }],
-"loop": false,
-"name": &"Monster",
-"speed": 0.5
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [node name="ElevatorScene2" type="Node2D"]
@@ -47,6 +58,13 @@ script = ExtResource("1_utb00")
 [node name="NoiseShader" parent="." instance=ExtResource("2_joo4d")]
 
 [node name="Player" parent="." instance=ExtResource("2_d134x")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(225, 238)
+sprite_frames = SubResource("SpriteFrames_2jjps")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.384192
 
 [node name="Hallway" type="TextureRect" parent="."]
 z_index = -2
@@ -64,17 +82,3 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_utb00")
 
 [node name="ButtonBoard" parent="." instance=ExtResource("4_2dx35")]
-
-[node name="TimerLevel" type="Timer" parent="."]
-
-[node name="TimerMonster" type="Timer" parent="."]
-
-[node name="MonsterAnim" type="AnimatedSprite2D" parent="."]
-z_index = -1
-position = Vector2(320, 240)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_qgeuq")
-animation = &"Monster"
-
-[connection signal="timeout" from="TimerLevel" to="." method="_on_timer_level_timeout"]
-[connection signal="timeout" from="TimerMonster" to="." method="_on_timer_monster_timeout"]

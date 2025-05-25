@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://difxahn5iebhn"]
 
-[ext_resource type="Texture2D" uid="uid://cj2ko1ssbumti" path="res://Assets/Placeholder/Victory Screen.jpg" id="1_oq8vb"]
+[ext_resource type="Texture2D" uid="uid://bgkcpth3fyj4h" path="res://Assets/Finished/Elevator/outro.jpg" id="1_oq8vb"]
 
 [node name="VictoryScreen" type="Node2D"]
 
