@@ -42,6 +42,7 @@ animations = [{
 }]
 
 [node name="elevator_scene_4" type="Node2D"]
+z_index = -1
 script = ExtResource("1_pjf0i")
 
 [node name="NoiseShader" parent="." instance=ExtResource("2_2ogkt")]
