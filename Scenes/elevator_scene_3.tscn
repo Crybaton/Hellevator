@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvxtp86dpsph5"]
+[gd_scene load_steps=15 format=3 uid="uid://dvxtp86dpsph5"]
 
 [ext_resource type="Script" uid="uid://b6scml2fch6ma" path="res://Scripts/elevator_scene_3.gd" id="1_bi5jp"]
 [ext_resource type="Texture2D" uid="uid://dmvpeqlp3bf0c" path="res://Assets/Finished/Elevator/corridor003.jpg" id="1_ea6ue"]
@@ -8,12 +8,45 @@
 [ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="3_0kfb5"]
 [ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="3_reeb5"]
 [ext_resource type="Shader" uid="uid://f7myj3a8wd8i" path="res://Shader/rotate.gdshader" id="4_yclw1"]
+[ext_resource type="Texture2D" uid="uid://dmrvbd6uke12o" path="res://Assets/Finished/Monster/MonsterLVL3.png" id="9_d2qmt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d2qmt"]
 shader = ExtResource("4_yclw1")
 shader_parameter/spin_texture = ExtResource("1_ea6ue")
 shader_parameter/clockwise = true
 shader_parameter/speed = 0.029
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cntd"]
+atlas = ExtResource("9_d2qmt")
+region = Rect2(0, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5g3jf"]
+atlas = ExtResource("9_d2qmt")
+region = Rect2(320, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygcyu"]
+atlas = ExtResource("9_d2qmt")
+region = Rect2(640, 0, 320, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fl4sh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_1cntd")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_5g3jf")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_ygcyu")
+}],
+"loop": false,
+"name": &"Monster",
+"speed": 0.5
+}]
 
 [node name="elevator_scene_3" type="Node2D"]
 script = ExtResource("1_bi5jp")
@@ -39,3 +72,17 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_bi5jp")
 
 [node name="ButtonBoard" parent="." instance=ExtResource("3_reeb5")]
+
+[node name="TimerLevel" type="Timer" parent="."]
+
+[node name="TimerMonster" type="Timer" parent="."]
+
+[node name="MonsterAnim" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(320, 240)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_fl4sh")
+animation = &"Monster"
+
+[connection signal="timeout" from="TimerLevel" to="." method="_on_timer_level_timeout"]
+[connection signal="timeout" from="TimerMonster" to="." method="_on_timer_monster_timeout"]
