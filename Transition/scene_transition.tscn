@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://ywqb2dgggkc3"]
+[gd_scene load_steps=13 format=3 uid="uid://ywqb2dgggkc3"]
 
 [ext_resource type="Texture2D" uid="uid://b4500aeqmw17i" path="res://Assets/Finished/Elevator/doorleft.jpg" id="1_1vfy5"]
 [ext_resource type="Script" uid="uid://6x3xpop8c3co" path="res://Scripts/scene_transition.gd" id="1_wkn0b"]
 [ext_resource type="Texture2D" uid="uid://dpfms7g6xw08f" path="res://Assets/Finished/Elevator/doorright.jpg" id="2_wkn0b"]
-[ext_resource type="Texture2D" uid="uid://bupntd1r0iaea" path="res://Assets/Finished/Elevator/dooropengoop.png" id="4_drwcg"]
+[ext_resource type="Texture2D" uid="uid://bi8bp4d81xsdr" path="res://Assets/Finished/ElevatorNew/dooropen.png" id="4_c1tn7"]
 [ext_resource type="Script" uid="uid://cagskvdmwuxem" path="res://Transition/camera_shake.gd" id="5_drwcg"]
+[ext_resource type="Texture2D" uid="uid://cwdip8vrw7ixe" path="res://Assets/Finished/ElevatorNew/dooropen_02.png" id="5_kfua6"]
+[ext_resource type="Texture2D" uid="uid://csdnanisy2uwh" path="res://Assets/Finished/ElevatorNew/dooropen_03.png" id="6_hm807"]
+[ext_resource type="Texture2D" uid="uid://bk0v0bbomhs5d" path="res://Assets/Finished/ElevatorNew/dooropen_04.png" id="7_72uke"]
+[ext_resource type="Texture2D" uid="uid://gburbhq5ftuw" path="res://Assets/Finished/ElevatorNew/dooropen_05.png" id="8_l0on3"]
 
 [sub_resource type="Animation" id="Animation_1vfy5"]
 resource_name = "RESET"
@@ -35,19 +39,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("dissolve_rect/DoorFrame:visible")
+tracks/2/path = NodePath("dissolve_rect/DoorLeft:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("dissolve_rect/DoorLeft:modulate")
+tracks/3/path = NodePath("dissolve_rect/DoorRight:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -59,50 +63,86 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("dissolve_rect/DoorRight:modulate")
+tracks/4/path = NodePath("dissolve_rect/DoorRight:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(640, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("dissolve_rect/DoorFrame:modulate")
+tracks/5/path = NodePath("dissolve_rect/DoorLeft:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(-320, 0)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("dissolve_rect/DoorRight:position")
+tracks/6/path = NodePath("dissolve_rect/ButtonBoard:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(640, 0)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("dissolve_rect/DoorLeft:position")
+tracks/7/path = NodePath("dissolve_rect/EleDacay1:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-320, 0)]
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("dissolve_rect/EleDacay2:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("dissolve_rect/EleDacay3:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("dissolve_rect/EleDacay4:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_wkn0b"]
@@ -135,38 +175,86 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("dissolve_rect/DoorFrame:modulate")
+tracks/2/path = NodePath("dissolve_rect/DoorRight:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 2.13333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+"values": [Vector2(640, 0), Vector2(320, 0)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("dissolve_rect/DoorRight:position")
+tracks/3/path = NodePath("dissolve_rect/DoorLeft:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 2.13333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(640, 0), Vector2(320, 0)]
+"values": [Vector2(-320, 0), Vector2(0, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("dissolve_rect/DoorLeft:position")
+tracks/4/path = NodePath("dissolve_rect/ButtonBoard:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 2.13333),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-320, 0), Vector2(0, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("dissolve_rect/EleDacay1:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("dissolve_rect/EleDacay2:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("dissolve_rect/EleDacay3:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("dissolve_rect/EleDacay4:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_drwcg"]
@@ -197,14 +285,49 @@ offset_bottom = 480.0
 mouse_filter = 2
 texture = ExtResource("2_wkn0b")
 
-[node name="DoorFrame" type="TextureRect" parent="dissolve_rect"]
+[node name="ButtonBoard" type="TextureRect" parent="dissolve_rect"]
 modulate = Color(1, 1, 1, 0)
-z_index = 10
-texture_filter = 1
-offset_right = 640.0
-offset_bottom = 480.0
-mouse_filter = 2
-texture = ExtResource("4_drwcg")
+z_index = 11
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_c1tn7")
+
+[node name="EleDacay1" type="TextureRect" parent="dissolve_rect"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 11
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_kfua6")
+
+[node name="EleDacay2" type="TextureRect" parent="dissolve_rect"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 11
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("6_hm807")
+
+[node name="EleDacay3" type="TextureRect" parent="dissolve_rect"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 11
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("7_72uke")
+
+[node name="EleDacay4" type="TextureRect" parent="dissolve_rect"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 11
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("8_l0on3")
 
 [node name="TransitionPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -14,7 +14,15 @@ func _on_button_close_pressed():
 		print(Global.ElevatorDamage)
 
 func _death():
+	if Global.ElevatorDamage == 1:
+		$EleDacay1.show()
+	if Global.ElevatorDamage == 2:
+		$EleDacay2.show()
 	if Global.ElevatorDamage == 3:
+		$EleDacay3.show()
+	if Global.ElevatorDamage == 4:
+		$EleDacay4.show()
+	if Global.ElevatorDamage == 5:
 		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
 
 	
