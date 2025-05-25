@@ -1,5 +1,5 @@
 extends Window
-const PASSWORD = "123456789"
+const PASSWORD = "8429530741"
 @onready var label = $Camera2D/Keypad/VBoxContainer/MarginContainer/Label
 
 @onready var popup = $"."
@@ -14,7 +14,7 @@ func _on_keypad_pressed():
 		poppedout = false
 
 func key_press(digit):
-	if len(label.text) < 9:
+	if len(label.text) < 10:
 		label.text += str(digit)
 
 

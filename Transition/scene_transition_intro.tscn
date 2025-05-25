@@ -1,15 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://ywqb2dgggkc3"]
+[gd_scene load_steps=15 format=3 uid="uid://cec8yfksmyqrl"]
 
-[ext_resource type="Texture2D" uid="uid://b4500aeqmw17i" path="res://Assets/Finished/Elevator/doorleft.jpg" id="1_1vfy5"]
-[ext_resource type="Script" uid="uid://6x3xpop8c3co" path="res://Scripts/scene_transition.gd" id="1_wkn0b"]
-[ext_resource type="Texture2D" uid="uid://dpfms7g6xw08f" path="res://Assets/Finished/Elevator/doorright.jpg" id="2_wkn0b"]
-[ext_resource type="Texture2D" uid="uid://x7m8rm4n86v" path="res://Assets/Finished/ElevatorNew/dooropenlast.png" id="4_c1tn7"]
-[ext_resource type="Script" uid="uid://cagskvdmwuxem" path="res://Transition/camera_shake.gd" id="5_drwcg"]
-[ext_resource type="Texture2D" uid="uid://cwdip8vrw7ixe" path="res://Assets/Finished/ElevatorNew/dooropen_02.png" id="5_kfua6"]
-[ext_resource type="Texture2D" uid="uid://csdnanisy2uwh" path="res://Assets/Finished/ElevatorNew/dooropen_03.png" id="6_hm807"]
-[ext_resource type="Texture2D" uid="uid://bk0v0bbomhs5d" path="res://Assets/Finished/ElevatorNew/dooropen_04.png" id="7_72uke"]
-[ext_resource type="Texture2D" uid="uid://gburbhq5ftuw" path="res://Assets/Finished/ElevatorNew/dooropen_05.png" id="8_l0on3"]
-[ext_resource type="Texture2D" uid="uid://dt6euk2tt3gkk" path="res://Assets/Finished/UI/intro.jpg" id="10_kfua6"]
+[ext_resource type="Script" uid="uid://dqcleiwic8a25" path="res://Transition/scene_transition_intro.gd" id="1_h3rws"]
+[ext_resource type="Texture2D" uid="uid://b4500aeqmw17i" path="res://Assets/Finished/Elevator/doorleft.jpg" id="2_gxfam"]
+[ext_resource type="Texture2D" uid="uid://dpfms7g6xw08f" path="res://Assets/Finished/Elevator/doorright.jpg" id="3_spss2"]
+[ext_resource type="Texture2D" uid="uid://x7m8rm4n86v" path="res://Assets/Finished/ElevatorNew/dooropenlast.png" id="4_62vwl"]
+[ext_resource type="Texture2D" uid="uid://cwdip8vrw7ixe" path="res://Assets/Finished/ElevatorNew/dooropen_02.png" id="5_jsnxg"]
+[ext_resource type="Texture2D" uid="uid://csdnanisy2uwh" path="res://Assets/Finished/ElevatorNew/dooropen_03.png" id="6_vl4i4"]
+[ext_resource type="Texture2D" uid="uid://bk0v0bbomhs5d" path="res://Assets/Finished/ElevatorNew/dooropen_04.png" id="7_q6rhm"]
+[ext_resource type="Texture2D" uid="uid://gburbhq5ftuw" path="res://Assets/Finished/ElevatorNew/dooropen_05.png" id="8_c1ie4"]
+[ext_resource type="Script" uid="uid://cagskvdmwuxem" path="res://Transition/camera_shake.gd" id="9_jcl81"]
+[ext_resource type="Texture2D" uid="uid://dt6euk2tt3gkk" path="res://Assets/Finished/UI/intro.jpg" id="10_lbd6b"]
 
 [sub_resource type="Animation" id="Animation_1vfy5"]
 resource_name = "RESET"
@@ -353,8 +353,8 @@ _data = {
 &"dissolveIntro": SubResource("Animation_kfua6")
 }
 
-[node name="scene_transition" type="Node"]
-script = ExtResource("1_wkn0b")
+[node name="scene_transition_Intro" type="Node"]
+script = ExtResource("1_h3rws")
 
 [node name="dissolve_rect" type="Node" parent="."]
 
@@ -364,7 +364,7 @@ z_index = 10
 offset_left = -320.0
 offset_bottom = 480.0
 mouse_filter = 2
-texture = ExtResource("1_1vfy5")
+texture = ExtResource("2_gxfam")
 
 [node name="DoorRight" type="TextureRect" parent="dissolve_rect"]
 modulate = Color(1, 1, 1, 0)
@@ -373,7 +373,7 @@ offset_left = 640.0
 offset_right = 960.0
 offset_bottom = 480.0
 mouse_filter = 2
-texture = ExtResource("2_wkn0b")
+texture = ExtResource("3_spss2")
 
 [node name="ButtonBoard" type="TextureRect" parent="dissolve_rect"]
 modulate = Color(1, 1, 1, 0)
@@ -381,7 +381,7 @@ z_index = 11
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
-texture = ExtResource("4_c1tn7")
+texture = ExtResource("4_62vwl")
 
 [node name="EleDacay1" type="TextureRect" parent="dissolve_rect"]
 visible = false
@@ -390,7 +390,7 @@ z_index = 11
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
-texture = ExtResource("5_kfua6")
+texture = ExtResource("5_jsnxg")
 
 [node name="EleDacay2" type="TextureRect" parent="dissolve_rect"]
 visible = false
@@ -399,7 +399,7 @@ z_index = 11
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
-texture = ExtResource("6_hm807")
+texture = ExtResource("6_vl4i4")
 
 [node name="EleDacay3" type="TextureRect" parent="dissolve_rect"]
 visible = false
@@ -408,7 +408,7 @@ z_index = 11
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
-texture = ExtResource("7_72uke")
+texture = ExtResource("7_q6rhm")
 
 [node name="EleDacay4" type="TextureRect" parent="dissolve_rect"]
 visible = false
@@ -417,7 +417,7 @@ z_index = 11
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
-texture = ExtResource("8_l0on3")
+texture = ExtResource("8_c1ie4")
 
 [node name="TransitionPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -426,7 +426,7 @@ libraries = {
 
 [node name="CameraShake" type="Camera2D" parent="."]
 anchor_mode = 0
-script = ExtResource("5_drwcg")
+script = ExtResource("9_jcl81")
 
 [node name="Intro" type="TextureRect" parent="."]
 visible = false
@@ -434,4 +434,4 @@ z_index = 15
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
-texture = ExtResource("10_kfua6")
+texture = ExtResource("10_lbd6b")

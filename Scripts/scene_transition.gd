@@ -11,6 +11,7 @@ func change_scene(target: String) -> void:
 		Global.Screenshake = true
 		$TransitionPlayer.play_backwards("dissolve")
 		
+		
 func _death():
 	if Global.ElevatorDamage == 1:
 		$dissolve_rect/EleDacay1.show()

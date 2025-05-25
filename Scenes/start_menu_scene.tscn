@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://ba28mvps3jdwt" path="res://Shader/noise_shader.tscn" id="2_kwaka"]
 [ext_resource type="Texture2D" uid="uid://dpfms7g6xw08f" path="res://Assets/Finished/Elevator/doorright.jpg" id="3_85mc1"]
 [ext_resource type="Texture2D" uid="uid://v2f85c3clceq" path="res://Assets/Finished/Elevator/corridorsolo.jpg" id="3_kwaka"]
-[ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="4_3yj3u"]
 [ext_resource type="Texture2D" uid="uid://cw57o33mlp4gw" path="res://Assets/Finished/Elevator/Doors.png" id="4_fgyjo"]
-[ext_resource type="Texture2D" uid="uid://cd2piiafyk6x" path="res://Assets/Placeholder/HELLEVATOR Logo.png" id="7_kwaka"]
+[ext_resource type="Texture2D" uid="uid://x7m8rm4n86v" path="res://Assets/Finished/ElevatorNew/dooropenlast.png" id="7_yye11"]
+[ext_resource type="Texture2D" uid="uid://cogywr38jk4wc" path="res://Assets/Finished/UI/HELLEVATOR Logo.png" id="8_kwaka"]
 
 [sub_resource type="Animation" id="Animation_yye11"]
 resource_name = "DoorRemove"
@@ -152,6 +152,7 @@ _data = {
 script = ExtResource("1_3yj3u")
 
 [node name="NoiseShader" parent="." instance=ExtResource("2_kwaka")]
+visible = false
 
 [node name="ParallaxAtHome" type="Node2D" parent="."]
 
@@ -195,14 +196,14 @@ metadata/_edit_use_anchors_ = true
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
-texture = ExtResource("4_3yj3u")
+texture = ExtResource("7_yye11")
 metadata/_edit_use_anchors_ = true
 
 [node name="Logo" type="TextureRect" parent="ParallaxAtHome"]
 z_index = 11
 offset_right = 640.0
 offset_bottom = 480.0
-texture = ExtResource("7_kwaka")
+texture = ExtResource("8_kwaka")
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -213,10 +214,10 @@ position = Vector2(320, 240)
 script = ExtResource("1_vdot4")
 
 [node name="ButtonStart" type="Button" parent="."]
-offset_left = 533.0
-offset_top = 281.0
-offset_right = 603.0
-offset_bottom = 312.0
+offset_left = 531.0
+offset_top = 302.0
+offset_right = 612.0
+offset_bottom = 333.0
 theme_override_colors/font_hover_pressed_color = Color(0.491046, 0.0351962, 0.0469354, 1)
 theme_override_colors/font_color = Color(0.698039, 0.0705882, 0.0862745, 1)
 text = "DESCEND
