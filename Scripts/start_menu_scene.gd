@@ -6,4 +6,6 @@ func _on_button_start_pressed():
 	SceneTransition.change_scene("res://Scenes/elevator.tscn")
 	$ParallaxAtHome/Doors.hide()
 	$AnimationLogo.play("LogoDown")
+	await($AnimationLogo.animation_finished)
+	$ParallaxAtHome/Logo.hide()
 	
