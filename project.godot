@@ -26,7 +26,6 @@ ButtonBoard="*res://Scenes/button_board.tscn"
 
 window/size/viewport_width=640
 window/size/viewport_height=480
-window/size/mode=3
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://dgal8jtah1l6s"
 mouse_cursor/custom_image_hotspot=Vector2(6, 6)

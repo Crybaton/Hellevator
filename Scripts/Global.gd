@@ -3,3 +3,4 @@ extends Node
 @export var PanicDoorsClosed = false
 @export var PanicDoorsClosing = false
 @export var ElevatorDamage = 0
+@export var Save = false
