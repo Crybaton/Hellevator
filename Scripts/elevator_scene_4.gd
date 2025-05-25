@@ -3,7 +3,13 @@ extends Node2D
 @onready var timerLevel = $TimerLevel
 @onready var timerMonster = $TimerMonster
 @onready var animMonster = $MonsterAnim
+@onready var ZoomArea = $Zoom
+@onready var timerZoom = $TimerZoom
+
 var random = RandomNumberGenerator.new()
+
+
+
 
 func _ready():
 	SoundManager._stop_all()
@@ -13,6 +19,7 @@ func _ready():
 	Global.PanicDoorsClosing = false
 	timerLevel.set_wait_time(random.randf_range(7, 15))
 	timerLevel.start()
+	timerZoom.set_wait_time(1)
 	
 
 func _on_timer_monster_timeout():
@@ -31,3 +38,15 @@ func _on_timer_level_timeout():
 	timerMonster.start()
 	$MonsterAnim.play("Monster")
 	SoundManager._appearance()
+
+
+func _on_zoom_mouse_entered():
+	timerZoom.start()
+
+
+func _on_zoom_mouse_exited():
+	timerZoom.stop()
+
+
+func _on_timer_zoom_timeout():
+	$Hallway.scale *= 1.01

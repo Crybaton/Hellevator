@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dby3a2axisir6"]
 
 [ext_resource type="Script" uid="uid://dytivxru8k64r" path="res://Scripts/buttonMaster.gd" id="1_0iiyx"]
-[ext_resource type="Texture2D" uid="uid://x7m8rm4n86v" path="res://Assets/Finished/ElevatorNew/dooropenlast.png" id="2_agrl0"]
+[ext_resource type="Texture2D" uid="uid://gv6r25tf772l" path="res://Assets/Finished/ElevatorNew/dooropenUI.png" id="2_agrl0"]
 [ext_resource type="PackedScene" uid="uid://dhsqf5q1ro8fl" path="res://Scenes/keypad.tscn" id="3_88ty5"]
 [ext_resource type="Texture2D" uid="uid://cwdip8vrw7ixe" path="res://Assets/Finished/ElevatorNew/dooropen_02.png" id="3_agrl0"]
 [ext_resource type="Texture2D" uid="uid://csdnanisy2uwh" path="res://Assets/Finished/ElevatorNew/dooropen_03.png" id="4_6dpih"]

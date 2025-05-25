@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="2_ewk50"]
 [ext_resource type="Texture2D" uid="uid://cwvdwgaoofq80" path="res://Assets/Finished/Elevator/doc.png" id="3_rvk1n"]
 [ext_resource type="Texture2D" uid="uid://dpkm6mmlxdqtt" path="res://Assets/Finished/Elevator/anus.png" id="4_86njt"]
-[ext_resource type="Texture2D" uid="uid://bvm5eiuohooe3" path="res://Assets/Finished/Elevator/finger.png" id="5_8jnpm"]
+[ext_resource type="Texture2D" uid="uid://b726xo1p60itp" path="res://Assets/Finished/Monster/fingernew.png" id="6_817bg"]
 [ext_resource type="Script" uid="uid://divnh623pd5ew" path="res://Scripts/marker_doc.gd" id="6_rvk1n"]
 [ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="7_fagg3"]
 [ext_resource type="Texture2D" uid="uid://kousnh1sdsmg" path="res://Assets/Finished/Monster/010_02.png" id="7_kwrme"]
@@ -46,7 +46,7 @@ z_index = -2
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(2, 2)
-texture = ExtResource("5_8jnpm")
+texture = ExtResource("6_817bg")
 
 [node name="Finger2" type="TextureRect" parent="ParallaxAtHome"]
 offset_right = 40.0

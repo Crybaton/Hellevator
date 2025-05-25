@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1ghaawx5pa73"]
+[gd_scene load_steps=14 format=3 uid="uid://d1ghaawx5pa73"]
 
 [ext_resource type="Texture2D" uid="uid://clklxl61yn65l" path="res://Assets/Finished/Elevator/corridor004.jpg" id="1_8py2d"]
 [ext_resource type="Script" uid="uid://b023uyy78jvac" path="res://Scripts/elevator_scene_4.gd" id="1_pjf0i"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="3_5yfo4"]
 [ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="3_n4g6e"]
 [ext_resource type="Texture2D" uid="uid://bj1ba4h7u4txk" path="res://Assets/Finished/Monster/MonsterLVL4.png" id="8_iulre"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iulre"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2s1oc"]
 atlas = ExtResource("8_iulre")
@@ -51,12 +53,29 @@ script = ExtResource("1_pjf0i")
 
 [node name="Hallway" type="TextureRect" parent="."]
 z_index = -2
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(2, 2)
 texture = ExtResource("1_8py2d")
 
 [node name="PanicDoors" parent="." instance=ExtResource("3_n4g6e")]
+
+[node name="Zoom" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zoom"]
+z_index = 2
+position = Vector2(317, 189)
+scale = Vector2(8.09, 8.09)
+shape = SubResource("CircleShape2D_iulre")
+
+[node name="TimerZoom" type="Timer" parent="."]
 
 [node name="Door" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -77,5 +96,8 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_alpr8")
 animation = &"Monster"
 
+[connection signal="mouse_entered" from="Zoom" to="." method="_on_zoom_mouse_entered"]
+[connection signal="mouse_exited" from="Zoom" to="." method="_on_zoom_mouse_exited"]
+[connection signal="timeout" from="TimerZoom" to="." method="_on_timer_zoom_timeout"]
 [connection signal="timeout" from="TimerLevel" to="." method="_on_timer_level_timeout"]
 [connection signal="timeout" from="TimerMonster" to="." method="_on_timer_monster_timeout"]
