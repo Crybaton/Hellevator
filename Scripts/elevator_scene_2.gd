@@ -13,11 +13,6 @@ func _ready():
 	timerLevel.start()
 	
 
-
-
-
-
-
 func _on_timer_monster_timeout():
 	print("BUH")
 	if Global.Save == false:

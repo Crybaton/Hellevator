@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1mgkvixxl1j1"]
+[gd_scene load_steps=17 format=3 uid="uid://d1mgkvixxl1j1"]
 
 [ext_resource type="Script" uid="uid://dwpag6l3e6k3k" path="res://Scripts/elevator_scene_2.gd" id="1_utb00"]
 [ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="2_d134x"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="4_2dx35"]
 [ext_resource type="Texture2D" uid="uid://dvhkrrqo3vlgd" path="res://Assets/Finished/Elevator/corridor002_02.png" id="4_brf3s"]
 [ext_resource type="Texture2D" uid="uid://bii5076cg0cm8" path="res://Assets/Finished/Elevator/corridor002_01.jpg" id="4_joo4d"]
+[ext_resource type="Texture2D" uid="uid://bdscys30c058g" path="res://Assets/Finished/Monster/MonsterLVL2.png" id="9_7ydxg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ydxg"]
 atlas = ExtResource("4_brf3s")
@@ -52,6 +53,38 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jjps"]
+atlas = ExtResource("9_7ydxg")
+region = Rect2(0, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgeuq"]
+atlas = ExtResource("9_7ydxg")
+region = Rect2(320, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir58f"]
+atlas = ExtResource("9_7ydxg")
+region = Rect2(640, 0, 320, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5f11a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_2jjps")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_qgeuq")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_ir58f")
+}],
+"loop": false,
+"name": &"Monster",
+"speed": 0.5
+}]
+
 [node name="ElevatorScene2" type="Node2D"]
 script = ExtResource("1_utb00")
 
@@ -60,6 +93,7 @@ script = ExtResource("1_utb00")
 [node name="Player" parent="." instance=ExtResource("2_d134x")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -2
 position = Vector2(225, 238)
 sprite_frames = SubResource("SpriteFrames_2jjps")
 animation = &"new_animation"
@@ -67,7 +101,7 @@ autoplay = "new_animation"
 frame_progress = 0.384192
 
 [node name="Hallway" type="TextureRect" parent="."]
-z_index = -2
+z_index = -3
 offset_right = 320.0
 offset_bottom = 240.0
 scale = Vector2(2, 2)
@@ -82,3 +116,17 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_utb00")
 
 [node name="ButtonBoard" parent="." instance=ExtResource("4_2dx35")]
+
+[node name="TimerLevel" type="Timer" parent="."]
+
+[node name="TimerMonster" type="Timer" parent="."]
+
+[node name="MonsterAnim" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(320, 240)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_5f11a")
+animation = &"Monster"
+
+[connection signal="timeout" from="TimerLevel" to="." method="_on_timer_level_timeout"]
+[connection signal="timeout" from="TimerMonster" to="." method="_on_timer_monster_timeout"]
