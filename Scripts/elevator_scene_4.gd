@@ -7,6 +7,7 @@ var random = RandomNumberGenerator.new()
 
 func _ready():
 	SoundManager._stop_all()
+	SoundManager._elevator4()
 	Global.Save = false 
 	Global.PanicDoorsClosed = false
 	Global.PanicDoorsClosing = false
