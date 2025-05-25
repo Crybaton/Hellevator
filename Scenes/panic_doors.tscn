@@ -114,12 +114,10 @@ _data = {
 }
 
 [node name="PanicDoors" type="Node2D"]
-z_index = -1
 script = ExtResource("1_6sndi")
 
 [node name="DoorLeft" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
-z_index = -1
 texture_filter = 1
 offset_left = -320.0
 offset_right = -160.0
@@ -129,7 +127,6 @@ texture = ExtResource("2_6sndi")
 
 [node name="DoorRight" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
-z_index = -1
 offset_left = 640.0
 offset_right = 800.0
 offset_bottom = 240.0

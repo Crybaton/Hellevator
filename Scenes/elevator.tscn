@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxuh8rnyasyvd"]
+[gd_scene load_steps=13 format=3 uid="uid://bxuh8rnyasyvd"]
 
 [ext_resource type="Script" uid="uid://b7y8l6s046ydw" path="res://Scripts/elevator.gd" id="1_jd6vs"]
 [ext_resource type="Texture2D" uid="uid://bnqxqkmm0vua6" path="res://Assets/Finished/Elevator/corridor001.jpg" id="2_1gjip"]
@@ -7,6 +7,39 @@
 [ext_resource type="Texture2D" uid="uid://d16ke3qsyqxn5" path="res://Assets/Finished/Elevator/dooropen.png" id="2_jd6vs"]
 [ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="3_sdfrh"]
 [ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="5_sdfrh"]
+[ext_resource type="Texture2D" uid="uid://bwr7jj86807fo" path="res://Assets/Finished/Monster/MonsterLVL1.png" id="8_sopnf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sopnf"]
+atlas = ExtResource("8_sopnf")
+region = Rect2(0, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uble1"]
+atlas = ExtResource("8_sopnf")
+region = Rect2(320, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_terx2"]
+atlas = ExtResource("8_sopnf")
+region = Rect2(640, 0, 320, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ad3g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_sopnf")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_uble1")
+}, {
+"duration": 5.5,
+"texture": SubResource("AtlasTexture_terx2")
+}],
+"loop": false,
+"name": &"Monster",
+"speed": 0.5
+}]
 
 [node name="Elevator" type="Node2D"]
 script = ExtResource("1_jd6vs")
@@ -31,3 +64,17 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_jd6vs")
 
 [node name="ButtonBoard" parent="." instance=ExtResource("5_sdfrh")]
+
+[node name="TimerLevel" type="Timer" parent="."]
+
+[node name="TimerMonster" type="Timer" parent="."]
+
+[node name="MonsterAnim" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(320, 240)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_7ad3g")
+animation = &"Monster"
+
+[connection signal="timeout" from="TimerLevel" to="." method="_on_timer_level_timeout"]
+[connection signal="timeout" from="TimerMonster" to="." method="_on_timer_monster_timeout"]
