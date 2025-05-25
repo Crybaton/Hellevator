@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhsqf5q1ro8fl"]
+[gd_scene load_steps=4 format=3 uid="uid://dhsqf5q1ro8fl"]
 
+[ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="2_cam67"]
 [ext_resource type="Script" uid="uid://ccbrn60vcndvt" path="res://Scripts/KeyPad.gd" id="2_ohrw4"]
+[ext_resource type="PackedScene" uid="uid://ba28mvps3jdwt" path="res://Shader/noise_shader.tscn" id="3_cam67"]
 
 [node name="Keypad" type="Node2D"]
 
@@ -16,6 +18,10 @@ unresizable = true
 always_on_top = true
 min_size = Vector2i(200, 300)
 script = ExtResource("2_ohrw4")
+
+[node name="Player" parent="NumPadWindow" instance=ExtResource("2_cam67")]
+
+[node name="NoiseShader" parent="NumPadWindow" instance=ExtResource("3_cam67")]
 
 [node name="Camera2D" type="Camera2D" parent="NumPadWindow"]
 position = Vector2(0, -1)

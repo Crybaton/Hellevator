@@ -58,4 +58,4 @@ func _on_button_8_pressed():
 
 func _on_button_9_pressed():
 	SoundManager._pressed()
-	SceneTransition.change_scene("res://Scenes/elevator_scene_9.tscn")
+	SceneTransition.change_scene("res://Scenes/elevator_scene_9b.tscn")

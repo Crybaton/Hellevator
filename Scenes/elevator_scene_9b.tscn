@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://xoi8wh02jtus"]
+
+[ext_resource type="PackedScene" uid="uid://ba28mvps3jdwt" path="res://Shader/noise_shader.tscn" id="1_0pigw"]
+[ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="2_ewk50"]
+[ext_resource type="Texture2D" uid="uid://cwvdwgaoofq80" path="res://Assets/Finished/Elevator/doc.png" id="3_rvk1n"]
+[ext_resource type="Texture2D" uid="uid://dpkm6mmlxdqtt" path="res://Assets/Finished/Elevator/anus.png" id="4_86njt"]
+[ext_resource type="Texture2D" uid="uid://bvm5eiuohooe3" path="res://Assets/Finished/Elevator/finger.png" id="5_8jnpm"]
+[ext_resource type="Script" uid="uid://divnh623pd5ew" path="res://Scripts/marker_doc.gd" id="6_rvk1n"]
+[ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="7_fagg3"]
+[ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="8_kwrme"]
+
+[node name="elevator_scene_9b" type="Node2D"]
+
+[node name="NoiseShader" parent="." instance=ExtResource("1_0pigw")]
+
+[node name="Player" parent="." instance=ExtResource("2_ewk50")]
+
+[node name="ParallaxAtHome" type="Node2D" parent="."]
+
+[node name="BG" type="ColorRect" parent="ParallaxAtHome"]
+z_index = -5
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0.000693898, 0.000693898, 0.000693898, 1)
+
+[node name="Doc" type="TextureRect" parent="ParallaxAtHome"]
+z_index = -4
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_rvk1n")
+
+[node name="Anus" type="TextureRect" parent="ParallaxAtHome"]
+z_index = -3
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_86njt")
+
+[node name="Finger" type="TextureRect" parent="ParallaxAtHome"]
+z_index = -2
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_8jnpm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="MarkerDoc" type="Marker2D" parent="."]
+position = Vector2(320, 240)
+script = ExtResource("6_rvk1n")
+
+[node name="PanicDoors" parent="." instance=ExtResource("7_fagg3")]
+
+[node name="ButtonBoard" parent="." instance=ExtResource("8_kwrme")]
