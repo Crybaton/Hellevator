@@ -18,7 +18,9 @@ func middlemouse_vector():
 	#print (str(offset.y) + " + " + str(offset.x))
 func middlebackground_vector():
 	if typeof(mouse_position) != TYPE_INT:
-		$"../ParallaxAtHome/Finger".position = offset * 0.01
+		$"../ParallaxAtHome/Finger".position = offset * 0.03
+		$"../ParallaxAtHome/Finger2".position = offset * 0.03
+		$"../ParallaxAtHome/Finger3".position = offset * 0.03
 		$"../ParallaxAtHome/Anus".position = offset * -0.05
 		$"../ParallaxAtHome/Doc".position = offset * -0.07
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://xoi8wh02jtus"]
+[gd_scene load_steps=12 format=3 uid="uid://xoi8wh02jtus"]
 
 [ext_resource type="PackedScene" uid="uid://ba28mvps3jdwt" path="res://Shader/noise_shader.tscn" id="1_0pigw"]
 [ext_resource type="Script" uid="uid://o55ulhheguxo" path="res://Scripts/elevator_scene_9b.gd" id="1_86njt"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bvm5eiuohooe3" path="res://Assets/Finished/Elevator/finger.png" id="5_8jnpm"]
 [ext_resource type="Script" uid="uid://divnh623pd5ew" path="res://Scripts/marker_doc.gd" id="6_rvk1n"]
 [ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="7_fagg3"]
+[ext_resource type="Texture2D" uid="uid://kousnh1sdsmg" path="res://Assets/Finished/Monster/010_02.png" id="7_kwrme"]
 [ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="8_kwrme"]
+[ext_resource type="Texture2D" uid="uid://beorlyn3k6644" path="res://Assets/Finished/Monster/010_03.png" id="8_qg3f3"]
 
 [node name="elevator_scene_9b" type="Node2D"]
 script = ExtResource("1_86njt")
@@ -46,6 +48,18 @@ offset_bottom = 40.0
 scale = Vector2(2, 2)
 texture = ExtResource("5_8jnpm")
 
+[node name="Finger2" type="TextureRect" parent="ParallaxAtHome"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("7_kwrme")
+
+[node name="Finger3" type="TextureRect" parent="ParallaxAtHome"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("8_qg3f3")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
@@ -56,3 +70,13 @@ script = ExtResource("6_rvk1n")
 [node name="PanicDoors" parent="." instance=ExtResource("7_fagg3")]
 
 [node name="ButtonBoard" parent="." instance=ExtResource("8_kwrme")]
+
+[node name="TimerLevel" type="Timer" parent="."]
+
+[node name="TimerMonster" type="Timer" parent="."]
+
+[node name="TimerFinger" type="Timer" parent="."]
+
+[connection signal="timeout" from="TimerLevel" to="." method="_on_timer_level_timeout"]
+[connection signal="timeout" from="TimerMonster" to="." method="_on_timer_monster_timeout"]
+[connection signal="timeout" from="TimerFinger" to="." method="_on_timer_finger_timeout"]

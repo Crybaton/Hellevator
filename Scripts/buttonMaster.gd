@@ -70,6 +70,12 @@ func _on_button_9_pressed():
 	timer.start()
 	SoundManager._pressed()
 	SceneTransition.change_scene("res://Scenes/elevator_scene_9b.tscn")
+	
+func _on_button_10_pressed():
+	timer.start()
+	SoundManager._pressed()
+	SceneTransition.change_scene("res://Scenes/elevator_scene_10.tscn")
+
 
 
 func _on_timer_save_timeout():

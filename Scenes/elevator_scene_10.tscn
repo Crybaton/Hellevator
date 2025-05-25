@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://b5r6dnxtpa3tp"]
+
+[ext_resource type="Script" uid="uid://cecv1yicbycna" path="res://Scripts/elevator_scene_10.gd" id="1_k3twm"]
+[ext_resource type="PackedScene" uid="uid://ba28mvps3jdwt" path="res://Shader/noise_shader.tscn" id="2_qx8mf"]
+[ext_resource type="PackedScene" uid="uid://dxdew7pv50hnu" path="res://Scenes/player.tscn" id="3_uv150"]
+[ext_resource type="Texture2D" uid="uid://cx1u5duq2l4sa" path="res://Assets/Finished/Elevator/corridor009.jpg" id="4_j4rqj"]
+[ext_resource type="PackedScene" uid="uid://gvlfoushpbbg" path="res://Scenes/panic_doors.tscn" id="5_pgpmn"]
+[ext_resource type="PackedScene" uid="uid://dby3a2axisir6" path="res://Scenes/button_board.tscn" id="6_wqyt1"]
+[ext_resource type="Texture2D" uid="uid://j11lulief0kp" path="res://Assets/Finished/Monster/MonsterLVL9.png" id="7_uv150"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4rqj"]
+atlas = ExtResource("7_uv150")
+region = Rect2(0, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgpmn"]
+atlas = ExtResource("7_uv150")
+region = Rect2(320, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqyt1"]
+atlas = ExtResource("7_uv150")
+region = Rect2(640, 0, 320, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n42xv"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": null
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_j4rqj")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_pgpmn")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_wqyt1")
+}],
+"loop": false,
+"name": &"Monster",
+"speed": 0.5
+}]
+
+[node name="elevator_scene_10" type="Node2D"]
+script = ExtResource("1_k3twm")
+
+[node name="NoiseShader" parent="." instance=ExtResource("2_qx8mf")]
+
+[node name="Player" parent="." instance=ExtResource("3_uv150")]
+
+[node name="Hallway" type="TextureRect" parent="."]
+z_index = -2
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_j4rqj")
+
+[node name="PanicDoors" parent="." instance=ExtResource("5_pgpmn")]
+
+[node name="ButtonBoard" parent="." instance=ExtResource("6_wqyt1")]
+
+[node name="TimerLevel" type="Timer" parent="."]
+
+[node name="TimerMonster" type="Timer" parent="."]
+
+[node name="MonsterAnim" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(320, 240)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_n42xv")
+animation = &"Monster"
+
+[connection signal="timeout" from="TimerLevel" to="." method="_on_timer_level_timeout"]
+[connection signal="timeout" from="TimerMonster" to="." method="_on_timer_monster_timeout"]
