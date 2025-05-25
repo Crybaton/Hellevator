@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	SoundManager._stop_all()
 	SoundManager._jingle()
 
 func _on_button_start_pressed():

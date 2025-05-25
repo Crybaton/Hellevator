@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpcmlasato1yc"]
+[gd_scene load_steps=10 format=3 uid="uid://bpcmlasato1yc"]
 
 [ext_resource type="Script" uid="uid://ctfxitfeb616x" path="res://Scripts/sound_manager.gd" id="1_32i44"]
 [ext_resource type="AudioStream" uid="uid://c8x2dnoaub3a3" path="res://Assets/Sounds/UI/buttons_pressed_all.tres" id="2_25ke0"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://laoswpqiutg7" path="res://Assets/Sounds/Elevator/elevator music.mp3" id="5_wyfeo"]
 [ext_resource type="AudioStream" uid="uid://dxes0xfme5g56" path="res://Assets/Sounds/Hallways/hallway1.mp3" id="6_08tfe"]
 [ext_resource type="AudioStream" uid="uid://bjbtndomoor0x" path="res://Assets/Sounds/Monster/appearance.mp3" id="6_rc4uc"]
+[ext_resource type="AudioStream" uid="uid://ejux3b51fkef" path="res://Assets/Sounds/Hallways/hallway1b.mp3" id="8_t5182"]
+[ext_resource type="AudioStream" uid="uid://bfwmol6s4v1no" path="res://Assets/Sounds/Hallways/hallway2.mp3" id="9_ptd6l"]
 
 [node name="SoundManager" type="Node"]
 script = ExtResource("1_32i44")
@@ -29,8 +31,16 @@ volume_db = -7.0
 
 [node name="Monster Drop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_rc4uc")
-volume_db = -8.0
+volume_db = -7.0
 
 [node name="Hallway 1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_08tfe")
 volume_db = -18.0
+
+[node name="Hallway 1b" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_t5182")
+volume_db = -17.0
+
+[node name="Hallway 2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ptd6l")
+volume_db = -7.0

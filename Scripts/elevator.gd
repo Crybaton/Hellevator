@@ -20,6 +20,7 @@ func _on_timer_level_timeout():
 	timerMonster.set_wait_time(20)
 	timerMonster.start()
 	animMonster.play("Monster")
+	SoundManager._appearance()
 
 
 

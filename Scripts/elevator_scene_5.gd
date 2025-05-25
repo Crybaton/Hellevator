@@ -5,6 +5,7 @@ extends Node2D
 var random = RandomNumberGenerator.new()
 
 func _ready():
+	SoundManager._stop_all()
 	Global.Save = false 
 	Global.PanicDoorsClosed = false
 	Global.PanicDoorsClosing = false
@@ -27,3 +28,4 @@ func _on_timer_level_timeout():
 	timerMonster.set_wait_time(20)
 	timerMonster.start()
 	$MonsterAnim.play("Monster")
+	SoundManager._appearance()

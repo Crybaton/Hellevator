@@ -26,6 +26,8 @@ func _appearance():
 
 @onready var jingle: AudioStreamPlayer = $Jingle
 @onready var hallway_1: AudioStreamPlayer = $"Hallway 1"
+@onready var hallway_1b: AudioStreamPlayer = $"Hallway 1b"
+@onready var hallway_2: AudioStreamPlayer = $"Hallway 2"
 
 
 # Music & Ambience (Loops)
@@ -35,7 +37,10 @@ func _jingle():
 
 func _elevator1():
 	hallway_1.play()
+	hallway_1b.play()
 
+func _elevator2():
+	hallway_2.play()
 
 # Stop Music
 func _stop_jingle():
@@ -44,3 +49,4 @@ func _stop_jingle():
 func _stop_all():
 	jingle.stop()
 	hallway_1.stop()
+#	hallway_1b.stop()
